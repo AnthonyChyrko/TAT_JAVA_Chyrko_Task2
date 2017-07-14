@@ -1,56 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="393" started-at="2017-07-13T14:16:07Z" finished-at="2017-07-13T14:16:07Z">
+  <suite name="Default suite" duration-ms="2137" started-at="2017-07-14T17:02:09Z" finished-at="2017-07-14T17:02:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="393" started-at="2017-07-13T14:16:07Z" finished-at="2017-07-13T14:16:07Z">
+    <test name="Default test" duration-ms="2137" started-at="2017-07-14T17:02:09Z" finished-at="2017-07-14T17:02:11Z">
       <class name="test.java.TestSignIn">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.java.TestSignIn@1efbd816]" name="beforeTest" is-config="true" duration-ms="359" started-at="2017-07-13T17:16:07Z" finished-at="2017-07-13T17:16:07Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.java.TestSignIn@4de8b406]" name="beforeTest" is-config="true" duration-ms="930" started-at="2017-07-14T20:02:09Z" finished-at="2017-07-14T20:02:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="userExistCorrectData(java.lang.String, java.lang.String)[pri:0, instance:test.java.TestSignIn@1efbd816]" name="userExistCorrectData" duration-ms="8" started-at="2017-07-13T17:16:07Z" data-provider="dp1" finished-at="2017-07-13T17:16:07Z">
-          <exception class="org.testng.internal.reflect.MethodMatcherException">
-            <message>
-              <![CDATA[
-Data provider mismatch
-Method: userExistCorrectData([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}])
-Arguments: [(java.lang.Integer)1,(java.lang.String)a]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
-Data provider mismatch
-Method: userExistCorrectData([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}])
-Arguments: [(java.lang.Integer)1,(java.lang.String)a]
-	at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:49)
-	at org.testng.internal.Invoker.injectParameters(Invoker.java:1293)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1187)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
+        <test-method status="PASS" signature="userExistCorrectData(java.lang.String, java.lang.String)[pri:0, instance:test.java.TestSignIn@4de8b406]" name="userExistCorrectData" duration-ms="132" started-at="2017-07-14T20:02:10Z" data-provider="dp1" finished-at="2017-07-14T20:02:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[command=sign_in&login=Anton&password=password4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Welcom!]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userExistCorrectData -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.java.TestSignIn@1efbd816]" name="afterTest" is-config="true" duration-ms="0" started-at="2017-07-13T17:16:07Z" finished-at="2017-07-13T17:16:07Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.java.TestSignIn@4de8b406]" name="afterTest" is-config="true" duration-ms="1042" started-at="2017-07-14T20:02:10Z" finished-at="2017-07-14T20:02:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

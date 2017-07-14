@@ -5,19 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-public class ConnectionPool {
+public class TestConnectionPool {
 //	 private String driver;
 	 private String url;
 	 private String user;
 	 private String password;
 	 private Connection instance;
 	 
-	 public ConnectionPool(){		 
+	 public TestConnectionPool(){		 
 		 try {			
 //			 this.driver = DBParameter.DB_DRIVER;
-			 this.user =DBParameter.DB_USER;
-	         this.url = DBParameter.DB_URL;
-	         this.password = DBParameter.DB_PASSWORD;
+			 this.user =TestDBParameter.DB_USER;
+	         this.url = TestDBParameter.DB_URL;
+	         this.password = TestDBParameter.DB_PASSWORD;
 			 instance = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
 			

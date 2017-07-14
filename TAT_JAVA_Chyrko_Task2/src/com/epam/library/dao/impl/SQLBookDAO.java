@@ -31,7 +31,7 @@ public class SQLBookDAO implements BookDAO{
 	private static final String EDIT_BOOK_QUANTITY = "UPDATE books SET b_quantity=? WHERE b_id = ?;";
 	private static final String EDIT_BOOK_AVAILABILITY = "UPDATE books SET b_available=? WHERE b_id = ?;";		
 
-	private static final String ADD_SUBSCRIPTION = "INSERT INTO `library_ver2`.`subscriptions` (`u_id`, `b_id`) VALUES (?, ?);";
+	private static final String ADD_SUBSCRIPTION = "INSERT INTO `subscriptions` (`u_id`, `b_id`) VALUES (?, ?);";
 	private static final String ADD_NEW_AUTHOR = "INSERT INTO `authors` (`a_name`) VALUES (?);";
 	private static final String ADD_NEW_GENRE = "INSERT INTO `genres` (`g_name`) VALUES (?);";
 	private static final String ADD_NEW_BOOK = "INSERT INTO `books` (`b_name`, `b_year`, `b_quantity`) VALUES (?, ?, ?);";
@@ -40,7 +40,7 @@ public class SQLBookDAO implements BookDAO{
 	private static final String M2M_BOOK_GENRES = "INSERT INTO `m2m_books_genres` (`b_id`, `g_id`) VALUES (?, ?)";	
 	
 	private static final String DELETE_BOOK = "DELETE from books where b_id = ?;";
-	private static final String REMOVE_SUBSCRIPTION = "DELETE FROM `library_ver2`.`subscriptions` WHERE `sb_id`=?;";
+	private static final String REMOVE_SUBSCRIPTION = "DELETE FROM `subscriptions` WHERE `sb_id`=?;";
 	
 	private static final String LAST_INSERT_ID = "SELECT LAST_INSERT_ID();";	
 	

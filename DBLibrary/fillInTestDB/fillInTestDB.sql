@@ -78,27 +78,27 @@ VALUES
 (99, 4, 4, '2015-10-08', '2025-11-08', 'Y');
 
 DELIMITER |
-CREATE TRIGGER `create_data` BEFORE INSERT ON `subscriptions`
+CREATE TRIGGER `create_date` BEFORE INSERT ON `subscriptions`
 FOR EACH ROW BEGIN
    set new.sb_start = now();
    set new.sb_finish =DATE_ADD(NOW(), INTERVAL 30 DAY);
 END;
+|
 
-DELIMITER |
 CREATE TRIGGER `subtract_b_quantity` AFTER INSERT ON `subscriptions`
 FOR EACH ROW BEGIN	
 	SET @b_count = (SELECT b_quantity FROM books WHERE b_id = NEW.b_id);
 	UPDATE `books` SET `b_quantity` =  (@b_count-1) WHERE `b_id` = NEW.b_id;
 END;
+|
 
-DELIMITER |
 CREATE TRIGGER `add_b_quantity` AFTER DELETE ON `subscriptions`
 FOR EACH ROW BEGIN	
 	SET @b_count = (SELECT b_quantity FROM books WHERE b_id = OLD.b_id);
 	UPDATE `books` SET `b_quantity` =  (@b_count+1) WHERE `b_id` = OLD.b_id;
 END;
+|
 
-DELIMITER |
 CREATE TRIGGER `book_availability` BEFORE UPDATE ON `books`
 FOR EACH ROW BEGIN	
 	IF NEW.b_quantity <= 0 THEN
@@ -107,6 +107,7 @@ FOR EACH ROW BEGIN
 	SET NEW.b_available = 'Y';
 	END IF;
 END;
+|
 
 
 
