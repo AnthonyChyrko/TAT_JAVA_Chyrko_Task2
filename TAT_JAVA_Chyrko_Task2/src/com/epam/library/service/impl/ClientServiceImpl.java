@@ -16,9 +16,9 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public void signIn(String login, String password)  throws ServiceException{
 		
-		if(login == null || login.isEmpty()){
-			logger.warn("Incorrect login");
-			throw new ServiceException("Incorrect login");
+		if(login == null || login.isEmpty() || password == null || password.isEmpty()){
+			logger.warn("Incorrect login or password");
+			throw new ServiceException("Incorrect login or password");
 		}		
 		
 		try {

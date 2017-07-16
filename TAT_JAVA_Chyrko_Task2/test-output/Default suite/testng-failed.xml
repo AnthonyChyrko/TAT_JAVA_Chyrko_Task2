@@ -5,8 +5,8 @@
     <classes>
       <class name="test.java.TestSignIn">
         <methods>
-          <include name="userExistCorrectData"/>
           <include name="afterTest"/>
+          <include name="userExistEmptyString" invocation-numbers="0"/>
           <include name="beforeTest"/>
         </methods>
       </class> <!-- test.java.TestSignIn -->

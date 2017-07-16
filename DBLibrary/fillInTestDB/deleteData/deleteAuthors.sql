@@ -1,1 +1,0 @@
-DELETE FROM `authors` WHERE `a_id` > 0

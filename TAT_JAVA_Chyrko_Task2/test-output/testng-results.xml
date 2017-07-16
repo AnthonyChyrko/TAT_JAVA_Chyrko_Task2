@@ -1,17 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2137" started-at="2017-07-14T17:02:09Z" finished-at="2017-07-14T17:02:11Z">
+  <suite name="Default suite" duration-ms="714" started-at="2017-07-16T16:39:16Z" finished-at="2017-07-16T16:39:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2137" started-at="2017-07-14T17:02:09Z" finished-at="2017-07-14T17:02:11Z">
+    <test name="Default test" duration-ms="714" started-at="2017-07-16T16:39:16Z" finished-at="2017-07-16T16:39:17Z">
       <class name="test.java.TestSignIn">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.java.TestSignIn@4de8b406]" name="beforeTest" is-config="true" duration-ms="930" started-at="2017-07-14T20:02:09Z" finished-at="2017-07-14T20:02:10Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.java.TestSignIn@100fc185]" name="beforeTest" is-config="true" duration-ms="381" started-at="2017-07-16T19:39:16Z" finished-at="2017-07-16T19:39:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="userExistCorrectData(java.lang.String, java.lang.String)[pri:0, instance:test.java.TestSignIn@4de8b406]" name="userExistCorrectData" duration-ms="132" started-at="2017-07-14T20:02:10Z" data-provider="dp1" finished-at="2017-07-14T20:02:10Z">
+        <test-method status="PASS" signature="userExistButIncorrectLogin(java.lang.String, java.lang.String)[pri:0, instance:test.java.TestSignIn@100fc185]" name="userExistButIncorrectLogin" duration-ms="72" started-at="2017-07-16T19:39:17Z" data-provider="userExistButIncorrectLogin" finished-at="2017-07-16T19:39:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[command=sign_in&login=WrongLogin&password=password4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Such a user does not exist yet! You can register!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userExistButIncorrectLogin -->
+        <test-method status="PASS" signature="userExistButIncorrectPassword(java.lang.String, java.lang.String)[pri:0, instance:test.java.TestSignIn@100fc185]" name="userExistButIncorrectPassword" duration-ms="17" started-at="2017-07-16T19:39:17Z" data-provider="userExistButIncorrectPassword" finished-at="2017-07-16T19:39:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[command=sign_in&login=Anton&password=wrongPassword]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Wrong login or password!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userExistButIncorrectPassword -->
+        <test-method status="PASS" signature="userExistCorrectData(java.lang.String, java.lang.String)[pri:0, instance:test.java.TestSignIn@100fc185]" name="userExistCorrectData" duration-ms="11" started-at="2017-07-16T19:39:17Z" data-provider="userExistAndCorrectData" finished-at="2017-07-16T19:39:17Z">
           <params>
             <param index="0">
               <value>
@@ -27,7 +59,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userExistCorrectData -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.java.TestSignIn@4de8b406]" name="afterTest" is-config="true" duration-ms="1042" started-at="2017-07-14T20:02:10Z" finished-at="2017-07-14T20:02:11Z">
+        <test-method status="PASS" signature="userExistEmptyString(java.lang.String, java.lang.String)[pri:0, instance:test.java.TestSignIn@100fc185]" name="userExistEmptyString" duration-ms="3" started-at="2017-07-16T19:39:17Z" data-provider="userExistEmptyString" finished-at="2017-07-16T19:39:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[command=sign_in&login=&password=]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Incorrect login or password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userExistEmptyString -->
+        <test-method status="PASS" signature="userIsNotExist(java.lang.String, java.lang.String)[pri:0, instance:test.java.TestSignIn@100fc185]" name="userIsNotExist" duration-ms="8" started-at="2017-07-16T19:39:17Z" data-provider="userIsNotExist" finished-at="2017-07-16T19:39:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[command=sign_in&login=NoSuchUser&password=fictionalPassword]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Such a user does not exist yet! You can register!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userIsNotExist -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.java.TestSignIn@100fc185]" name="afterTest" is-config="true" duration-ms="199" started-at="2017-07-16T19:39:17Z" finished-at="2017-07-16T19:39:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

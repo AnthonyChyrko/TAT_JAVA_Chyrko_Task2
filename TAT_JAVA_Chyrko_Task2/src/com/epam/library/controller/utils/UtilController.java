@@ -14,8 +14,14 @@ public class UtilController {
 		for (int i = 0; i < param.length; i++) {
 			String[] params = param[i].split("=");	
 			if(comName.toString().equals(params[0].toUpperCase())){
-				logger.info(params[0] + " - " + params[1]);//TODO А оно мне надо?)
-				return params[1];
+				try {
+					logger.info(params[0] + " - " + params[1]);//TODO А оно мне надо?)
+					return params[1];
+				} catch (ArrayIndexOutOfBoundsException e) {
+					logger.error("No such parameter!");
+					return null;
+				}
+				
 			}
 		}		
 		return null;	

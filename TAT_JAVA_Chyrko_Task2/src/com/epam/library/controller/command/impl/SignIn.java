@@ -27,6 +27,7 @@ public class SignIn implements Command {
 			logger.info(response);
 		} catch (ServiceException e) {
 			logger.error(e.getMessage());
+			response = e.getMessage();
 		}
 				
 		return response;

@@ -35,7 +35,7 @@ public class SQLUserDAO implements UserDAO {
 	
 	@Override
 	public void signIn(String login, String password) throws DAOException{			
-		
+		boolean signIn = false;
 		connectionPool = new ConnectionPool();		
 		connection = connectionPool.getConnection();
 		try {
@@ -49,7 +49,7 @@ public class SQLUserDAO implements UserDAO {
 							logger.warn("User banned!");
 							throw new DAOException("User banned!");
 						}else if("OUT".equals(rs.getString(5))){	
-							
+							signIn = true;
 							ps = connection.prepareStatement(SIGN_IN_USER);
 							ps.setInt(1, rs.getInt(1));
 							ps.executeUpdate();								
@@ -68,7 +68,9 @@ public class SQLUserDAO implements UserDAO {
 					}
 				}
 			}
-			if(user.getUserId() == 0){
+			System.out.println(user.toString()+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			if(!signIn){
+				user.nullifyUser();
 				logger.warn("Such a user does not exist yet! You can register!");
 				throw new DAOException("Such a user does not exist yet! You can register!");
 			}
