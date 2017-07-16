@@ -11,7 +11,7 @@ import com.epam.library.service.exception.ServiceException;
 
 public class ClientServiceImpl implements ClientService {
 	private final static Logger logger = Logger.getLogger(ClientServiceImpl.class);
-	User user;
+	User user = User.getInstance();
 
 	@Override
 	public void signIn(String login, String password)  throws ServiceException{
@@ -32,14 +32,31 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public void signOut(String login) throws ServiceException{	
+	public void signOut(String login) throws ServiceException{
 		try {
+			logger.info(user.toString());
+			if(user.getLogin()==null && user.getLogin().isEmpty()){
+				logger.warn("There is no user in the system!");
+				throw new ServiceException("There is no user in the system!");
+			}else if(!user.getLogin().equals(login)){
+				logger.warn("Only the user can do SingOut!");
+				throw new ServiceException("Only the user can do SingOut!");
+			}
+			if(!"IN".equals(user.getSignIn())){
+				logger.warn("You must be SignIn!");
+				throw new ServiceException("You must be SignIn!");
+			}
+		
 			DAOFactory daoObjectFactory = DAOFactory.getInstance();
 			UserDAO userDAO = daoObjectFactory.getUserDAO();
 			userDAO.signOut(login);
 		} catch (DAOException e) {
+			logger.error(e.getMessage());
 			throw new ServiceException(e.getMessage());
-		}	
+		}	catch (NullPointerException npe) {
+			logger.warn("No one user in system!");
+			throw new ServiceException("No one user in system!");
+		}
 	}
 
 	@Override

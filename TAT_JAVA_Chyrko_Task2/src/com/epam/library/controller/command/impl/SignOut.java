@@ -21,12 +21,12 @@ public class SignOut implements Command {
 
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		ClientService clientService = serviceFactory.getClientService();
-		try {
+		try {	
 			clientService.signOut(login);
 			response = "Good Bye!";
 			logger.info(response);
 		} catch (ServiceException e) {
-			logger.error(e.getMessage());
+			response = e.getMessage();
 		}
 				
 		return response;

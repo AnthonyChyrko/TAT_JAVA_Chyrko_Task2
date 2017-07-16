@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="test.java.TestSignIn">
+      <class name="test.java.TstSignOut">
         <methods>
-          <include name="afterTest"/>
-          <include name="userExistEmptyString" invocation-numbers="0"/>
           <include name="beforeTest"/>
+          <include name="userAlreadySignOut" invocation-numbers="0"/>
+          <include name="clearDataUserInSystem"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- test.java.TestSignIn -->
+      </class> <!-- test.java.TstSignOut -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -92,14 +92,7 @@ public class SQLUserDAO implements UserDAO {
 	}
 	
 	@Override
-	public void signOut(String login) throws DAOException {	
-		if(user.getLogin()==null){
-			logger.warn("There is no user in the system!");
-			throw new DAOException("There is no user in the system!");
-		}else if(!user.getLogin().equals(login)){
-			logger.warn("Only the user can do SingOut!");
-			throw new DAOException("Only the user can do SingOut!");
-		}
+	public void signOut(String login) throws DAOException {			
 		
 		connectionPool = new ConnectionPool();		
 		connection = connectionPool.getConnection();		
@@ -109,17 +102,19 @@ public class SQLUserDAO implements UserDAO {
 			rs = ps.executeQuery();
 			
 			while(rs.next()){					
-				if(login.equals(rs.getString(2))){					
-					if("IN".equals(rs.getString(5))){						
+				if(login.equals(rs.getString(2))){
+					System.out.println(login + " - " + rs.getString(2) +" + "+ rs.getString(5));//TODO remove after
+					if("IN".equals(rs.getString(5))){								
 						ps = connection.prepareStatement(SIGN_OUT_USER);
 						ps.setInt(1, rs.getInt(1));
 						ps.executeUpdate();						
 									
 						user.nullifyUser();				
 						orderBooksList.clearOrderBooksList();
+						continue;
 					}else{						
-						logger.warn("User already SignOut!!!!");
-						throw new DAOException("User already SignOut!!!!");
+						logger.warn("User already SignOut!");
+						throw new DAOException("User already SignOut!");
 					}
 				}
 			}

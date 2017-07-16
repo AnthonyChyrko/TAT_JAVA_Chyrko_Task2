@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jul 16 19:39:16 MSK 2017</td>
+<td>Started on:</td><td>Mon Jul 17 00:09:02 MSK 2017</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (714 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (707 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,30 +75,35 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test.java.TestSignIn.userExistButIncorrectLogin()'><b>userExistButIncorrectLogin</b><br>Test class: test.java.TestSignIn<br>Parameters: command=sign_in&login=WrongLogin&password=password4, Such a user does not exist yet! You can register!</td>
+<td title='test.java.TstSignOut.EmptyLoginNoUserInSystem()'><b>EmptyLoginNoUserInSystem</b><br>Test class: test.java.TstSignOut<br>Parameters: command=sign_out&login=, No one user in system!</td>
 <td></td>
 <td>0</td>
-<td>test.java.TestSignIn@100fc185</td></tr>
+<td>test.java.TstSignOut@100fc185</td></tr>
 <tr>
-<td title='test.java.TestSignIn.userExistButIncorrectPassword()'><b>userExistButIncorrectPassword</b><br>Test class: test.java.TestSignIn<br>Parameters: command=sign_in&login=Anton&password=wrongPassword, Wrong login or password!</td>
+<td title='test.java.TstSignOut.EmptyLoginUserInSystem()'><b>EmptyLoginUserInSystem</b><br>Test class: test.java.TstSignOut<br>Parameters: command=sign_out&login=, Only the user can do SingOut!</td>
 <td></td>
 <td>0</td>
-<td>test.java.TestSignIn@100fc185</td></tr>
+<td>test.java.TstSignOut@100fc185</td></tr>
 <tr>
-<td title='test.java.TestSignIn.userExistCorrectData()'><b>userExistCorrectData</b><br>Test class: test.java.TestSignIn<br>Parameters: command=sign_in&login=Anton&password=password4, Welcom!</td>
+<td title='test.java.TstSignOut.clearDataUserInSystem()'><b>clearDataUserInSystem</b><br>Test class: test.java.TstSignOut<br>Parameters: command=sign_out&login=Anton, Good Bye!</td>
 <td></td>
 <td>0</td>
-<td>test.java.TestSignIn@100fc185</td></tr>
+<td>test.java.TstSignOut@100fc185</td></tr>
 <tr>
-<td title='test.java.TestSignIn.userExistEmptyString()'><b>userExistEmptyString</b><br>Test class: test.java.TestSignIn<br>Parameters: command=sign_in&login=&password=, Incorrect login or password</td>
+<td title='test.java.TstSignOut.noUserInSystem()'><b>noUserInSystem</b><br>Test class: test.java.TstSignOut<br>Parameters: command=sign_out&login=Anton, No one user in system!</td>
 <td></td>
 <td>0</td>
-<td>test.java.TestSignIn@100fc185</td></tr>
+<td>test.java.TstSignOut@100fc185</td></tr>
 <tr>
-<td title='test.java.TestSignIn.userIsNotExist()'><b>userIsNotExist</b><br>Test class: test.java.TestSignIn<br>Parameters: command=sign_in&login=NoSuchUser&password=fictionalPassword, Such a user does not exist yet! You can register!</td>
+<td title='test.java.TstSignOut.userAlreadySignOut()'><b>userAlreadySignOut</b><br>Test class: test.java.TstSignOut<br>Parameters: command=sign_out&login=Anton, User already SignOut!</td>
 <td></td>
 <td>0</td>
-<td>test.java.TestSignIn@100fc185</td></tr>
+<td>test.java.TstSignOut@100fc185</td></tr>
+<tr>
+<td title='test.java.TstSignOut.userExistButAlreadyOUT()'><b>userExistButAlreadyOUT</b><br>Test class: test.java.TstSignOut<br>Parameters: command=sign_out&login=Anton, You must be SignIn!</td>
+<td></td>
+<td>0</td>
+<td>test.java.TstSignOut@100fc185</td></tr>
 </table><p>
 </body>
 </html>
