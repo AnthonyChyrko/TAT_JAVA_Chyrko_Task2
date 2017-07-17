@@ -1,117 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="707" started-at="2017-07-16T21:09:02Z" finished-at="2017-07-16T21:09:03Z">
+  <suite name="Default suite" duration-ms="2134" started-at="2017-07-17T10:53:10Z" finished-at="2017-07-17T10:53:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="707" started-at="2017-07-16T21:09:02Z" finished-at="2017-07-16T21:09:03Z">
-      <class name="test.java.TstSignOut">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.java.TstSignOut@100fc185]" name="beforeTest" is-config="true" duration-ms="398" started-at="2017-07-17T00:09:02Z" finished-at="2017-07-17T00:09:02Z">
+    <test name="Default test" duration-ms="2134" started-at="2017-07-17T10:53:10Z" finished-at="2017-07-17T10:53:13Z">
+      <class name="test.java.TstEditLogin">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:test.java.TstEditLogin@1efbd816]" name="beforeTest" is-config="true" duration-ms="1116" started-at="2017-07-17T13:53:10Z" finished-at="2017-07-17T13:53:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="EmptyLoginNoUserInSystem(java.lang.String, java.lang.String)[pri:0, instance:test.java.TstSignOut@100fc185]" name="EmptyLoginNoUserInSystem" duration-ms="63" started-at="2017-07-17T00:09:02Z" data-provider="EmptyLoginNoUserInSystem" finished-at="2017-07-17T00:09:03Z">
+        <test-method status="PASS" signature="corLogUserInElseLogin(java.lang.String, java.lang.String)[pri:0, instance:test.java.TstEditLogin@1efbd816]" name="corLogUserInElseLogin" duration-ms="94" started-at="2017-07-17T13:53:12Z" data-provider="corLogUserInElseLogin" finished-at="2017-07-17T13:53:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[command=sign_out&login=]]>
+                <![CDATA[command=edit_Login&login=Sema]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[No one user in system!]]>
+                <![CDATA[You can not change someone else's login!]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmptyLoginNoUserInSystem -->
-        <test-method status="PASS" signature="EmptyLoginUserInSystem(java.lang.String, java.lang.String)[pri:0, instance:test.java.TstSignOut@100fc185]" name="EmptyLoginUserInSystem" duration-ms="3" started-at="2017-07-17T00:09:03Z" data-provider="EmptyLoginUserInSystem" finished-at="2017-07-17T00:09:03Z">
+        </test-method> <!-- corLogUserInElseLogin -->
+        <test-method status="PASS" signature="corLogUserOut(java.lang.String, java.lang.String)[pri:0, instance:test.java.TstEditLogin@1efbd816]" name="corLogUserOut" duration-ms="3" started-at="2017-07-17T13:53:12Z" data-provider="corLogUserOut" finished-at="2017-07-17T13:53:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[command=sign_out&login=]]>
+                <![CDATA[command=edit_Login&login=Sema]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Only the user can do SingOut!]]>
+                <![CDATA[You must be registered or SignIn!]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmptyLoginUserInSystem -->
-        <test-method status="PASS" signature="clearDataUserInSystem(java.lang.String, java.lang.String)[pri:0, instance:test.java.TstSignOut@100fc185]" name="clearDataUserInSystem" duration-ms="20" started-at="2017-07-17T00:09:03Z" data-provider="clearDataUserInSystem" finished-at="2017-07-17T00:09:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[command=sign_out&login=Anton]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Good Bye!]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clearDataUserInSystem -->
-        <test-method status="PASS" signature="noUserInSystem(java.lang.String, java.lang.String)[pri:0, instance:test.java.TstSignOut@100fc185]" name="noUserInSystem" duration-ms="3" started-at="2017-07-17T00:09:03Z" data-provider="noUserInSystem" finished-at="2017-07-17T00:09:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[command=sign_out&login=Anton]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[No one user in system!]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- noUserInSystem -->
-        <test-method status="PASS" signature="userExistButAlreadyOUT(java.lang.String, java.lang.String)[pri:0, instance:test.java.TstSignOut@100fc185]" name="userExistButAlreadyOUT" duration-ms="2" started-at="2017-07-17T00:09:03Z" data-provider="userExistButAlreadyOUT" finished-at="2017-07-17T00:09:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[command=sign_out&login=Anton]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[You must be SignIn!]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- userExistButAlreadyOUT -->
-        <test-method status="PASS" signature="userAlreadySignOut(java.lang.String, java.lang.String)[pri:0, instance:test.java.TstSignOut@100fc185]" name="userAlreadySignOut" duration-ms="9" started-at="2017-07-17T00:09:03Z" data-provider="userAlreadySignOut" depends-on-methods="test.java.TstSignOut.clearDataUserInSystem" finished-at="2017-07-17T00:09:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[command=sign_out&login=Anton]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[User already SignOut!]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- userAlreadySignOut -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.java.TstSignOut@100fc185]" name="afterTest" is-config="true" duration-ms="184" started-at="2017-07-17T00:09:03Z" finished-at="2017-07-17T00:09:03Z">
+        </test-method> <!-- corLogUserOut -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:test.java.TstEditLogin@1efbd816]" name="afterTest" is-config="true" duration-ms="883" started-at="2017-07-17T13:53:12Z" finished-at="2017-07-17T13:53:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- test.java.TstSignOut -->
+      </class> <!-- test.java.TstEditLogin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

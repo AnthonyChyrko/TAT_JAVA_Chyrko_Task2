@@ -136,8 +136,8 @@ public class SQLUserDAO implements UserDAO {
 			
 			while(rs.next()){				
 				if(login.equals(rs.getString(2))){		
-					logger.warn("User with such login already exists!");
-					throw new DAOException("User with such login already exists!");
+					logger.warn("User with such login already exists! Think up another login!");
+					throw new DAOException("User with such login already exists! Think up another login!");
 				}else if(password.equals(rs.getString(3))){
 					logger.warn("User with such password already exists!");
 					throw new DAOException("User with such password already exists!");
@@ -159,16 +159,8 @@ public class SQLUserDAO implements UserDAO {
 	@Override
 	public void editLogin(String login) throws DAOException {
 		connectionPool = new ConnectionPool();		
-		connection = connectionPool.getConnection();
-		
-		if(user.getLogin() == null || user.getLogin().isEmpty()
-				|| user.getPassword() == null || user.getPassword().isEmpty()
-						|| user.getAccess() == null || user.getAccess().isEmpty()
-							|| user.getSignIn() == null || user.getSignIn().isEmpty()){
-			logger.error("You must be registered or SignIn!");
-			throw new DAOException("You must be registered or SignIn!");
-		}
-		
+		connection = connectionPool.getConnection();		
+		boolean flag = false;
 		try {
 			ps = connection.prepareStatement(GET_USERS);
 			ResultSet rs = ps.executeQuery();
@@ -176,7 +168,7 @@ public class SQLUserDAO implements UserDAO {
 				if(user.getLogin().equals(rs.getString(2)) && user.getPassword().equals(rs.getString(3))&&
 				user.getAccess().equals(rs.getString(4)) && user.getSignIn().equals(rs.getString(5))){					
 					user.setUserId(Integer.valueOf(rs.getString(1))); //id user for edit					
-					                    
+					flag = true;             
 					ps = connection.prepareStatement(EDIT_LOGIN);
 					ps.setString(1, login);
 					ps.setLong(2, user.getUserId());	
@@ -184,6 +176,11 @@ public class SQLUserDAO implements UserDAO {
 					user.setLogin(login);
 				}
 			}
+			if(!flag){
+				logger.warn("User is absent in db! Please registration!");
+				throw new DAOException("User is absent in db! Please registration!");
+			}
+			
 			
 		} catch (SQLException e) {
 			logger.error("SQLException!");
@@ -280,32 +277,7 @@ public class SQLUserDAO implements UserDAO {
 	public void banUser(String targetlogin, String signIn) throws DAOException {
 		connectionPool = new ConnectionPool();		
 		connection = connectionPool.getConnection();
-		boolean flag = false;
-		
-		if(user.getLogin() == null || user.getLogin().isEmpty()
-				|| user.getPassword() == null || user.getPassword().isEmpty()
-						|| user.getAccess() == null || user.getAccess().isEmpty()
-							|| user.getSignIn() == null || user.getSignIn().isEmpty()){
-			logger.warn("You must be registered or SignIn!");
-					throw new DAOException("You must be registered or SignIn!");
-				}
-		
-		//проверка на lock/unlock
-		if(!signIn.equals("OUT")&&!signIn.equals("BAN")){
-			logger.warn("You do not have permission to BLOCK/UNLOCK user!");
-			throw new DAOException("You do not have permission to BLOCK/UNLOCK user!");
-		}
-		
-		if(!user.getAccess().equals("A")&&!user.getAccess().equals("SA")){
-			logger.warn("You do not have permission to BLOCK/UNLOCK user!");
-			throw new DAOException("You do not have permission to BLOCK/UNLOCK user!");
-		}
-		
-		if(targetlogin.equals(user.getLogin())){
-			logger.warn("You can not ban yourself!");
-			throw new DAOException("You can not ban yourself!");
-		}
-		
+		boolean flag = false;		
 		try {
 			ps = connection.prepareStatement(GET_USERS);
 			rs = ps.executeQuery();	
@@ -314,6 +286,10 @@ public class SQLUserDAO implements UserDAO {
 					if("SA".equals(rs.getString(4))){
 						logger.warn("You can not block superadmin!");
 						throw new DAOException("You can not block superadmin!");
+					}
+					if("BAN".equals(rs.getString(5))){
+						logger.warn("User already BAN!");
+						throw new DAOException("User already BAN!");
 					}
 					flag = true;
 					ps = connection.prepareStatement(BAN_USER);

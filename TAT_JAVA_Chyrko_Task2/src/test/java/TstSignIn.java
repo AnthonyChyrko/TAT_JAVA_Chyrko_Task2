@@ -21,7 +21,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestSignIn {
+public class TstSignIn {
 
 	List<String> pathFillTestDB = new ArrayList<>();
 	List<String> pathCleanTestDB = new ArrayList<>();
@@ -84,7 +84,7 @@ public class TestSignIn {
   @DataProvider
   public Object[][] userExistAndCorrectData() {
     return new Object[][] {
-      new Object[] { "command=sign_in&login=Anton&password=password4", "Welcom!" },     
+      new Object[] { "command=sign_in&login=Anton&password=passWord4", "Welcom!" },     
     };
   } 
   
@@ -120,8 +120,7 @@ public class TestSignIn {
 	  pathFillTestDB.add(PathCommand.CREATE_TRIGGER_CREATE_DATE);
 	  pathFillTestDB.add(PathCommand.CREATE_TRIGGER_SUBSTRACT_B_QUANTITY);
 		for (int i = 0; i < pathFillTestDB.size(); i++) {
-			sb = Encodings.readFileWithCharset(pathFillTestDB.get(i), PathCommand.CHARSET);			
-			System.out.println(""+sb);
+			sb = Encodings.readFileWithCharset(pathFillTestDB.get(i), PathCommand.CHARSET);		
 			try {
 				ps = connection.prepareStatement(""+sb);
 				ps.executeUpdate();
@@ -150,8 +149,7 @@ public class TestSignIn {
 	  pathCleanTestDB.add(PathCommand.DELETE_BOOKS);	
 	
 		for (int i = 0; i < pathCleanTestDB.size(); i++) {
-			sb = Encodings.readFileWithCharset(pathCleanTestDB.get(i), PathCommand.CHARSET);			
-			System.out.println(""+sb);
+			sb = Encodings.readFileWithCharset(pathCleanTestDB.get(i), PathCommand.CHARSET);	
 			try {
 				ps = connection.prepareStatement(""+sb);
 				ps.executeUpdate();

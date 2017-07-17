@@ -10,28 +10,28 @@ public class Runner {
 		User user = User.getInstance();		
 		
 //		user.setUser(login, password, "IN" , "SA"); //user in system
-//		user.setUser("Петя", "password2", "IN" , "U"); //user in system
-		user.setUser(3, "Semas", "qwerty", "IN" , "A"); //user in system
+//		user.setUser("пїЅпїЅпїЅпїЅ", "password2", "IN" , "U"); //user in system
+//		user.setUser(3, "Semas", "qwerty", "IN" , "A"); //user in system
 //		user.setUser("Anton", "password4", "IN" , "SA"); //user in system
 
 
-//		String request = "command=show_all_books&login=Сёма&access=A";  //посмотреть все книги
+//		String request = "command=show_all_books&login=СёпїЅпїЅ&access=A";  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 //		String request = "command=add_book&title=MyFirstBook1&author=Chyrko Anton"
-//				+ "&genre=fantasy&year=2017&quantity=1";   // добавить книгу
-//		String request = "command=registration&login=Person1&password=password123";   // регистрация юзера
-		String request1 = "command=sign_in&login=Semas&password=qwerty";    // вход в систему
-//		String request = "command=sign_out&login=Anton";					// выход из системы
-//		String request = "command=edit_Login&login=Sema"; // редактировать login
-//		String request = "command=edit_Password&password=newPassword"; // редактировать password
-//		String request = "command=edit_access&login=Kol&access=U"; // редактировать access
-//		String request = "command=ban_user&login=Сёма&signIn=BAN"; // ban User
+//				+ "&genre=fantasy&year=2017&quantity=1";   // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+		String request1 = "command=registration&login=Perswe123w3&password=pAss11";   // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+//		String request1 = "command=sign_in&login=Semas&password=qwerty";    // пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+//		String request = "command=sign_out&login=Anton";					// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+//		String request = "command=edit_Login&login=Sema"; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ login
+//		String request = "command=edit_Password&password=newPassword"; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ password
+//		String request = "command=edit_access&login=Kol&access=U"; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ access
+//		String request = "command=ban_user&login=СёпїЅпїЅ&signIn=BAN"; // ban User
 //		String request = "command=add_book&title=SuperBookFree2&author=Somebody Else&year=2016&genre=fantastik&quantity=11&availability=Y"; //add new book
-//		String request1 = "command=EDIT_ORDER_BOOKS_LIST&ACTION_COMMAND=Add_book&B_ID=4"; //edit orderBooksList буду добавлять по одной книге
-//		String request2 = "command=EDIT_ORDER_BOOKS_LIST&ACTION_COMMAND=Add_book&B_ID=4"; //edit orderBooksList буду добавлять по одной книге
-//		String request3 = "command=EDIT_ORDER_BOOKS_LIST&ACTION_COMMAND=remove_book&B_ID=5"; //edit orderBooksList буду добавлять по одной книге
-//		String request4 = "command=EDIT_ORDER_BOOKS_LIST&ACTION_COMMAND=remove_book&B_ID=6"; //edit orderBooksList буду добавлять по одной книге
-//		String request3 = "command=ADD_SUBSCRIPTION&"; //subscription будем добавлять в базу данных
-//		String request4 = "command=REMOVE_SUBSCRIPTION&U_ID=3&B_ID=6"; //subscription будем добавлять в базу данных
+//		String request1 = "command=EDIT_ORDER_BOOKS_LIST&ACTION_COMMAND=Add_book&B_ID=4"; //edit orderBooksList пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+//		String request2 = "command=EDIT_ORDER_BOOKS_LIST&ACTION_COMMAND=Add_book&B_ID=4"; //edit orderBooksList пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+//		String request3 = "command=EDIT_ORDER_BOOKS_LIST&ACTION_COMMAND=remove_book&B_ID=5"; //edit orderBooksList пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+//		String request4 = "command=EDIT_ORDER_BOOKS_LIST&ACTION_COMMAND=remove_book&B_ID=6"; //edit orderBooksList пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+//		String request3 = "command=ADD_SUBSCRIPTION&"; //subscription пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+//		String request4 = "command=REMOVE_SUBSCRIPTION&U_ID=3&B_ID=6"; //subscription пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		
 //		String request = "command=BOOK_AVAILABILITY&title=SuperBook3&availability=Y&author=andCompany&year=2017&genre=fantastik&quantity=50&book_id=4&"; //book availability
 //		String request = "command=edit_book&title=SuperBook&author=Anton&genre=fantastikAndProgramming&quantity=49&book_id=8&"; //edit dook

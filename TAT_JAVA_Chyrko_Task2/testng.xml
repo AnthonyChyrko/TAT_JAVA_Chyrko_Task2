@@ -1,0 +1,10 @@
+<suite name="TestSuite">
+	<test name="AutoQALibrary">
+		<classes>
+			<class name="test.java.TstSignIn" />
+			<class name="test.java.TstSignOut" />
+			<class name="test.java.TstRegister" />
+			<class name="test.java.TstBanUser" />
+		</classes>
+	</test>
+</suite>

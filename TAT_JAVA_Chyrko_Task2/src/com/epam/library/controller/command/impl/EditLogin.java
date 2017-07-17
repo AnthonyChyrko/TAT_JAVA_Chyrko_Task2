@@ -29,6 +29,7 @@ public class EditLogin implements Command {
 			response = "Login is changed!";
 			logger.info(response);
 		} catch (ServiceException e) {
+			response = e.getMessage();
 			logger.error(e.getMessage());
 		}
 				

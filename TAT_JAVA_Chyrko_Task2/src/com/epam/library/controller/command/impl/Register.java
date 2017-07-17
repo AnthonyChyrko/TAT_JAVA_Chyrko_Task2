@@ -25,10 +25,11 @@ public class Register implements Command {
 		ServiceFactory serviceFactory = ServiceFactory.getInstance();
 		ClientService clientService = serviceFactory.getClientService();
 		try {
-			clientService.registration(login, password);//тут вернулся текущий юзер
-			response = "New USER added!";
+			clientService.registration(login, password);//пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+			response = "New USER registered!";
 			logger.info(response);
 		} catch (ServiceException e) {
+			response = e.getMessage();
 			logger.error(e.getMessage());
 		}
 				
