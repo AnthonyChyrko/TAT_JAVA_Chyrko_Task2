@@ -46,7 +46,7 @@ public class SQLBookDAO implements BookDAO{
 	
 	private static final String BOOK_AVAILABILITY = "UPDATE books SET b_available=? WHERE b_id = ?;";
 	
-	ConnectionPool connectionPool;
+	ConnectionPool connectionPool;// объявление здесь полей экземпляра класса является очень грубой ошибкой
 	PreparedStatement ps = null;	
 	Connection connection;
 	User user = User.getInstance();
