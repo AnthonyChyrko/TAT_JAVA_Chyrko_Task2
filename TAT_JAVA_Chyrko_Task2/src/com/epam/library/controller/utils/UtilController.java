@@ -5,9 +5,10 @@ import org.apache.log4j.Logger;
 import com.epam.library.bean.Book;
 import com.epam.library.bean.OrderBooksList;
 
+// пакет именован множественным числом
 public class UtilController {	
 	private final static Logger logger = Logger.getLogger(UtilController.class);
-	OrderBooksList orderBooksList = OrderBooksList.getInstance();
+	OrderBooksList orderBooksList = OrderBooksList.getInstance();// куда пропали атрибуты доступа?
 	
 	public String recognizeParam(Enum<?> comName, String[] param){	
 		
@@ -15,7 +16,7 @@ public class UtilController {
 			String[] params = param[i].split("=");	
 			if(comName.toString().equals(params[0].toUpperCase())){
 				try {
-					logger.info(params[0] + " - " + params[1]);//TODO � ��� ��� ����?)
+					logger.info(params[0] + " - " + params[1]);//TODO À îíî ìíå íàäî?)
 					return params[1];
 				} catch (ArrayIndexOutOfBoundsException e) {
 					logger.error("No such parameter!");
@@ -30,7 +31,7 @@ public class UtilController {
 	public Book prepareBook(String[] param) {
 		int yearInt;
 		int quantityInt;		
-		long b_id;
+		long b_id;// называй переменные корректно
 		
 		String b_idStr = recognizeParam(BookParam.BOOK_ID, param);
 		String title = recognizeParam(BookParam.TITLE, param);
