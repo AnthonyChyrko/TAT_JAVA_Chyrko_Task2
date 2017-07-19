@@ -15,7 +15,7 @@ import com.epam.library.service.exception.ServiceException;
 
 public class ClientServiceImpl implements ClientService {
 	private final static Logger logger = Logger.getLogger(ClientServiceImpl.class);
-	User user = User.getInstance();
+	User user = User.getInstance();// ну вот ты только представь, что будет с кодом в многопоточном приложении
 
 	private boolean checkLogin(String login){
 		boolean result = false;
@@ -39,7 +39,7 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public void signIn(String login, String password)  throws ServiceException{
 		
-		if(login == null || login.isEmpty() || password == null || password.isEmpty()){
+		if(login == null || login.isEmpty() || password == null || password.isEmpty()){// и вот зачем после этих проверок ты еще что-то валидируешь на слое ДАО
 			logger.warn("Incorrect login or password");
 			throw new ServiceException("Incorrect login or password");
 		}		
@@ -76,7 +76,7 @@ public class ClientServiceImpl implements ClientService {
 		} catch (DAOException e) {
 			logger.error(e.getMessage());
 			throw new ServiceException(e.getMessage());
-		}	catch (NullPointerException npe) {
+		}	catch (NullPointerException npe) {//НЕЛЬЗЯ перехватывать nullpointerexception
 			logger.warn("No one user in system!");
 			throw new ServiceException("No one user in system!");
 		}
