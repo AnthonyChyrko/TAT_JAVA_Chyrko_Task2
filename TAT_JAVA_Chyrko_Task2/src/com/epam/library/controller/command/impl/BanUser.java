@@ -28,7 +28,8 @@ public class BanUser implements Command {
 			logger.info(response);
 		} catch (ServiceException e) {
 			response = e.getMessage();
-			logger.error(e.getMessage());
+			logger.error(e.getMessage());// логгируют ВСЕ исключение, а не только сообщение
+			// иначе смыла от логов не будет
 		}
 				
 		return response;

@@ -2,6 +2,7 @@ package com.epam.library.bean;
 
 import java.io.Serializable;
 
+// соблюдай очередность объявления методов по code convention
 public class Book implements Serializable{
 	/**
 	 * 

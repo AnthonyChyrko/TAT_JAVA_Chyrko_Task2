@@ -46,8 +46,8 @@ public class SQLBookDAO implements BookDAO{
 	
 	private static final String BOOK_AVAILABILITY = "UPDATE books SET b_available=? WHERE b_id = ?;";
 	
-	ConnectionPool connectionPool;
-	PreparedStatement ps = null;	
+	ConnectionPool connectionPool;// объявление здесь полей экземпляра класса является очень грубой ошибкой
+	PreparedStatement ps = null;// 	и даже если ты из здесь объявил - куда дел атрибуты доступа?
 	Connection connection;
 	User user = User.getInstance();
 	Book book;
@@ -56,7 +56,7 @@ public class SQLBookDAO implements BookDAO{
 	@Override
 	public void addBook(Book book) throws DAOException{
 		
-		if(user.getLogin() == null || user.getLogin().isEmpty()
+		if(user.getLogin() == null || user.getLogin().isEmpty()// зачем ДАО тут проверяет параметры? это же дао
 				|| user.getPassword() == null || user.getPassword().isEmpty()
 						|| user.getAccess() == null || user.getAccess().isEmpty()
 							|| user.getSignIn() == null || user.getSignIn().isEmpty()){
@@ -74,6 +74,7 @@ public class SQLBookDAO implements BookDAO{
 			
 			//Check the existence of a book
 			while(rs.next()){
+				//  я даже читать это условие не буду)))
 				if(book.getTitle().equals(rs.getString(2)) && book.getAuthor().equals(rs.getString(3)) 
 						&& book.getGenre().equals(rs.getString(4))&& book.getAvailability().equals(rs.getString(7))){
 					logger.error("Book already added in library!");
@@ -140,7 +141,7 @@ public class SQLBookDAO implements BookDAO{
 		} catch (SQLException e) {
 			logger.error("SQLException!");
 			throw new DAOException("SQLException!");
-		}		
+		}		// а где закрытие ресурсов?
 	}
 
 	@Override
