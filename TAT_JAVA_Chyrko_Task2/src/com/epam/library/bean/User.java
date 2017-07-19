@@ -9,7 +9,8 @@ public class User implements Serializable {
 	 */
 	private static final long serialVersionUID = 6171241758074046515L;
 
-	private static User instance;
+	private static User instance;// а с КАКОГО БОДУНА User вдруг синглтон, он же бин
+	// да еще и потоконебезопасный
 	
 	private long userId;
 	private String login;
